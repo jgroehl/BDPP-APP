@@ -78,7 +78,7 @@ def hello_world():
         # model3 = load('static/descriptors_classifier_newloss.pt')
         # model4 = load('static/image_classifier_best_newloss.pt')
         image_score = ""
-        rf_score = calculate_random_forest_score(input_array.reshape(1, -1), 'static/random_forest_newclassifier.pt')[0]
+        rf_score = calculate_random_forest_score(input_array.reshape(1, -1), 'static/random_forest')[0]
         dl_score = estimate_data_with_descriptor_network(input_array.reshape(1, -1), "static/descriptors_classifier_newloss.pt")[0][0]
         gupta_score = calculate_gupta_score(input_array)
         if data_img is not None:
