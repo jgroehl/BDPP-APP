@@ -1,0 +1,96 @@
+<left>
+<body>
+<font face="Lato">
+    <h1>
+        Blood-Brain Barrier-Drug-Penetration-Predictions (BDPP)
+    </h1>
+    <h3>
+        To calculate the probability of a drug to penetrate the blood-brain barrier input physico-chemical
+        descriptors or/and upload a png file of the skeletal formula of the compound. Click on "Calculation" to
+        receive the probability scores.
+    </h3>
+    <img src="{{href}}" height=1400/ align="left">
+    <div style="line-height: 450px">
+        <form method="TEXT">
+        <label><b>If possible, upload a png file of the Natta Projection/skeletal formula
+            (256px download via PubChem <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>):<b></label>
+            <input type="file" name="upload" accept=".png">
+    </div>
+    <div style="width: 2000px; height: 520px; ">
+        <p><b>If available, input comma-separated values of the following descriptors
+            (access via PubChem <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>,
+            drugbank <a href="https://go.drugbank.com/">drugbank</a>,
+            ChemSpider <a href="https://www.chemspider.com/">ChemSpider</a>,
+            and ChEMBL <a href="https://www.ebi.ac.uk/chembl/">ChEMBL</a>):</b></p>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Molecular weight (MW)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Partition of the octanol/water partition coefficients (xlogP)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- H bond donor count (HBD)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- H bond acceptor count (HBA)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Rotable Bond Count (RBC)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Topological polar surface area (TPSA)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Heavy atom count (HAC) </label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Negative log base ten of the Ka value (pka)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Distribution of the octanol/water partition coefficients (LogD)</label>
+        </form>
+        <form method="POST">
+            <input name="text" size="27">
+            <label>- Aromatic Rings (AR) </label>
+        </form>
+        <input type="checkbox" >Neutral</input>
+        <input type="checkbox">Acid</input>
+        <input type="checkbox">Base</input>
+        <label>- Select molecular species (MS): </label>
+        <p></p>
+        <button type="submit">Calculation</button><input type="reset">
+    </div>
+    <div style="width: 2000px; height: 250px; ">
+        <form
+        <label><font size="6">Gupta BBB:</font></label>
+        <output name="text"></output>
+        <p>
+        <label><font size="6">RF-BDPP: </font></label>
+        <output name="text"></output>
+        </p>
+        <label><font size="6">DL-BDPP: </font></label>
+        <output name="text"></output>
+        </p>
+        <label><font size="6">DL-Image-BDPP: </font></label>
+        <output name="text"></output>
+        </form>
+    </div>
+    <div style="width: 2000px; height: 200px; ">
+        <img src='static/Legend.png' height=150/ align="center">
+    </div>
+      <footer>
+         <a href="mailto:kontakt@example.com">Mail an kontakt@example.com</a>
+         <p>© 2022 by selfHTML</p>
+      </footer>
+</body>
+</left>
