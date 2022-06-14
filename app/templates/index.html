@@ -10,80 +10,63 @@
         receive the probability scores.
     </h3>
     <img src="{{href}}" height=1400/ align="left">
+    <form method="POST" enctype="multipart/form-data">
     <div style="line-height: 450px">
-        <form method="TEXT">
         <label><b>If possible, upload a png file of the Natta Projection/skeletal formula
             (256px download via PubChem <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>):<b></label>
             <input type="file" name="upload" accept=".png">
     </div>
     <div style="width: 2000px; height: 520px; ">
-        <p><b>If available, input comma-separated values of the following descriptors
+        <p><b>If available, input values of the following descriptors
             (access via PubChem <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>,
             drugbank <a href="https://go.drugbank.com/">drugbank</a>,
             ChemSpider <a href="https://www.chemspider.com/">ChemSpider</a>,
             and ChEMBL <a href="https://www.ebi.ac.uk/chembl/">ChEMBL</a>):</b></p>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+
+
+            <input name="mw" size="27" value="123">
             <label>- Molecular weight (MW)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="xlogP" size="27" value="1">
             <label>- Partition of the octanol/water partition coefficients (xlogP)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="HBD" size="27" value="2">
             <label>- H bond donor count (HBD)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="HBA" size="27" value="3">
             <label>- H bond acceptor count (HBA)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="RBC" size="27" value="4">
             <label>- Rotable Bond Count (RBC)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="TPSA" size="27" value="5">
             <label>- Topological polar surface area (TPSA)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="HAC" size="27" value="6">
             <label>- Heavy atom count (HAC) </label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="pka" size="27" value="7">
             <label>- Negative log base ten of the Ka value (pka)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="LogD" size="27" value="8">
             <label>- Distribution of the octanol/water partition coefficients (LogD)</label>
-        </form>
-        <form method="POST">
-            <input name="text" size="27">
+            </br>
+            <input name="AR" size="27" value="9">
             <label>- Aromatic Rings (AR) </label>
-        </form>
-        <input type="checkbox" >Neutral</input>
-        <input type="checkbox">Acid</input>
-        <input type="checkbox">Base</input>
-        <label>- Select molecular species (MS): </label>
-        <p></p>
-        <button type="submit">Calculation</button><input type="reset">
+            </br>
+            <input name="ms" type="radio" value="0" checked="checked">Neutral</input>
+            <input name="ms" type="radio" value="-1">Acid</input>
+            <input name="ms" type="radio" value="1">Base</input>
+            <label>- Select molecular species (MS): </label>
+            </br>
+            <button type="submit">Calculation</button><input type="reset">
     </div>
+    </form>
     <div style="width: 2000px; height: 250px; ">
-        <form
-        <label><font size="6">Gupta BBB:</font></label>
-        <output name="text"></output>
-        <p>
-        <label><font size="6">RF-BDPP: </font></label>
-        <output name="text"></output>
-        </p>
-        <label><font size="6">DL-BDPP: </font></label>
-        <output name="text"></output>
-        </p>
-        <label><font size="6">DL-Image-BDPP: </font></label>
-        <output name="text"></output>
-        </form>
+            <label><font size="6">Gupta BBB: {{gupta_score}}</font></label></br>
+            <label><font size="6">RF-BDPP: {{rf_score}}</font></label></br>
+            <label><font size="6">DL-BDPP: {{dl_score}}</font></label></br>
+            <label><font size="6">DL-Image-BDPP: {{image_score}}</font></label></br>
     </div>
     <div style="width: 2000px; height: 200px; ">
         <img src='static/Legend.png' height=150/ align="center">
