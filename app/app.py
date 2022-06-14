@@ -37,14 +37,10 @@ def hello_world():
         return render_template('index.html', href='static/Fig.1_GraphicalAbstract4.png')
     elif request_type_str == 'POST':
         print("POST")
-        print(request)
-        print(request.form)
-        print(request.files)
 
         # 1. EXTRACT DATA FROM FORM
         print("Extracting form data...")
         form = dict(request.form)
-        print(form)
         input_array = np.ones((11, ))
         input_array[0] = form['mw'] if "mw" in form else -1
         input_array[1] = form['xlogP'] if "xlogP" in form else -1
