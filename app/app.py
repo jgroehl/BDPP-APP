@@ -23,10 +23,12 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+
 app = Flask(__name__)
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
@@ -62,10 +64,7 @@ def hello_world():
         data_img = None
         if 'upload' in request.files:
             file = request.files['upload']
-            if file.filename == '':
-                flash('No selected file')
-                return redirect(request.url)
-            if file and allowed_file(file.filename):
+            if file.filename != '' and file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 file.save(filename)
@@ -74,6 +73,7 @@ def hello_world():
                 data_img = np.asarray(im)
                 # the "min" operator will result in an image that is opnly black where there is a white background.
                 data_img = 1 - (np.min(data_img, axis=2) / 255)
+                os.remove(filename)
 
 
         # 3. RUN MODELS ON THE PROVIDED DATA
